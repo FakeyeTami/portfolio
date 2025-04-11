@@ -258,13 +258,16 @@ export default function Contact() {
                                 <h4 className="mb-2 font-bold text-lg">
                                     Looking for a developer?
                                 </h4>
-                                <p className="mb-4 text-muted-foreground">
+                                <p className="mb-4 text- text-muted-foreground">
                                     Whether you need a website, web application,
                                     or technical consultation, I&apos;m here to
                                     help bring your ideas to life.
                                 </p>
                                 <Button variant="outline" asChild>
-                                    <a href="/resume.pdf" download="resume.pdf">
+                                    <a
+                                        href="/public/Resume.pdf"
+                                        download="Resume.pdf"
+                                    >
                                         Download Resume
                                     </a>
                                 </Button>

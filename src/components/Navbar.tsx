@@ -107,7 +107,9 @@ const Navbar = () => {
                             </button>
                         ))}
                         <Button className="bg-accent hover:bg-primary mt-2 w-full font-semibold text-white">
-                            Resume
+                            <a href="/public/Resume.pdf" download="Resume.pdf">
+                                Resume
+                            </a>
                         </Button>
                     </div>
                 </div>
