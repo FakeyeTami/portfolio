@@ -267,6 +267,8 @@ export default function Contact() {
                                     <a
                                         href="/public/Resume.pdf"
                                         download="Resume.pdf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                     >
                                         Download Resume
                                     </a>
