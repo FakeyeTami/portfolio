@@ -265,8 +265,8 @@ export default function Contact() {
                                 </p>
                                 <Button variant="outline" asChild>
                                     <a
-                                        href="/public/Resume.pdf"
-                                        download="Resume.pdf"
+                                        href="/public/resume.pdf"
+                                        download
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
