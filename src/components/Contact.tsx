@@ -18,10 +18,17 @@ import { Send, Mail } from "lucide-react";
 import { Toaster, toast } from "sonner";
 import SlideUpAnimation from "./animations/SlideUp";
 
+interface ContactFormInputs {
+    subject: string;
+    name: string;
+    email: string;
+    message: string;
+}
+
 export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const form = useForm({
+    const form = useForm<ContactFormInputs>({
         defaultValues: {
             subject: "",
             name: "",
@@ -30,33 +37,34 @@ export default function Contact() {
         },
     });
 
-    const onSubmit = (data, e) => {
-        e.preventDefault();
+    const onSubmit = async (
+        data: ContactFormInputs,
+        e?: React.BaseSyntheticEvent
+    ) => {
+        e?.preventDefault();
         setIsSubmitting(true);
 
-        emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID);
+        emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID || "");
 
-        emailjs
-            .send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        try {
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "",
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "",
                 {
                     subject: data.subject,
                     name: data.name,
                     email: data.email,
                     message: data.message,
                 }
-            )
-            .then(() => {
-                setIsSubmitting(false);
-                form.reset();
-                toast.success("Email sent successfully!");
-            })
-            .catch((err) => {
-                setIsSubmitting(false);
-                form.reset();
-                toast.error(`Failed to send email: ${err.message || err}`);
-            });
+            );
+            setIsSubmitting(false);
+            form.reset();
+            toast.success("Email sent successfully!");
+        } catch (err: any) {
+            setIsSubmitting(false);
+            form.reset();
+            toast.error(`Failed to send email: ${err.message || err}`);
+        }
     };
 
     return (
@@ -167,7 +175,7 @@ export default function Contact() {
                             </Form>
                         </div>
 
-                        <div className="">
+                        <div>
                             <div className="bg-card/80 shadow-sm backdrop-blur-sm p-6 border border-border/50 rounded-lg">
                                 <h3 className="mb-4 font-bold text-xl">
                                     Contact Information
