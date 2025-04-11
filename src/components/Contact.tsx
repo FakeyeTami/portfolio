@@ -1,6 +1,7 @@
 "use client";
 
 import emailjs from "emailjs-com";
+import { saveAs } from "file-saver";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
@@ -26,6 +27,10 @@ interface ContactFormInputs {
 }
 
 export default function Contact() {
+    const handleDownload = () => {
+        saveAs("./docs/Resume.pdf", "resume.pdf");
+    };
+
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const form = useForm<ContactFormInputs>({
@@ -263,15 +268,12 @@ export default function Contact() {
                                     or technical consultation, I&apos;m here to
                                     help bring your ideas to life.
                                 </p>
-                                <Button variant="outline" asChild>
-                                    <a
-                                        href="/docs/Resume.pdf"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        download="Resume"
-                                    >
-                                        Download Resume
-                                    </a>
+                                <Button
+                                    variant="outline"
+                                    asChild
+                                    onClick={handleDownload}
+                                >
+                                    Download Resume
                                 </Button>
                             </div>
                         </div>
