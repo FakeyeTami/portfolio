@@ -70,9 +70,9 @@ export default function About() {
                     <div className="flex md:flex-row flex-col items-center gap-20 lg:gap-10 mb-10">
                         <div className="space-y-4 w-full lg:w-3/5">
                             <p>
-                                I’m a passionate self-taught Full-Stack
+                                I&apos;m a passionate self-taught Full-Stack
                                 Developer with a deep love for building
-                                intuitive, performant web applications. I'm
+                                intuitive, performant web applications. I&apos;m
                                 constantly exploring new tools and techniques to
                                 stay ahead in the ever-evolving world of web
                                 development.
@@ -82,9 +82,9 @@ export default function About() {
                                 technology shapes the world—and that spark
                                 quickly turned into a full-blown obsession with
                                 solving real-world problems through code.
-                                Whether it's crafting seamless user interfaces
-                                or architecting robust backend systems, I love
-                                bringing ideas to life.
+                                Whether it&apos;s crafting seamless user
+                                interfaces or architecting robust backend
+                                systems, I love bringing ideas to life.
                             </p>
                             <p>
                                 I specialize in the full web stack, working with

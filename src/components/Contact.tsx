@@ -247,8 +247,8 @@ export default function Contact() {
                                 </h4>
                                 <p className="mb-4 text-muted-foreground">
                                     Whether you need a website, web application,
-                                    or technical consultation, I'm here to help
-                                    bring your ideas to life.
+                                    or technical consultation, I&apos;m here to
+                                    help bring your ideas to life.
                                 </p>
                                 <Button variant="outline" asChild>
                                     <a href="/resume.pdf" download="resume.pdf">
