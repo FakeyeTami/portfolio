@@ -66,11 +66,11 @@ export default function Contact() {
                     <h2 className="section-title gradient-text">
                         Get in Touch
                     </h2>
-                    <p className="mx-auto max-w-prose text-accent/60">
-                        Have a project in mind or just want to chat? Feel free
-                        to reach out. I&apos;m always open to discussing new
-                        projects, creative ideas, or opportunities to be part of
-                        your vision.
+                    <p className="mb-6 text-muted-foreground">
+                        I&apos;m currently available for freelance work,
+                        full-time positions, or collaborative projects.
+                        Don&apos;t hesitate to reach out using the form or
+                        through my social profiles.
                     </p>
                 </div>
 
