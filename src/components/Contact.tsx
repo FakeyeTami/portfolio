@@ -60,10 +60,15 @@ export default function Contact() {
             setIsSubmitting(false);
             form.reset();
             toast.success("Email sent successfully!");
-        } catch (err: any) {
+        } catch (err: unknown) {
             setIsSubmitting(false);
             form.reset();
-            toast.error(`Failed to send email: ${err.message || err}`);
+
+            if (err instanceof Error) {
+                toast.error(`Failed to send email: ${err.message}`);
+            } else {
+                toast.error("Failed to send email due to an unknown error.");
+            }
         }
     };
 
