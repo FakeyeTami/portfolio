@@ -108,7 +108,7 @@ const Navbar = () => {
                         ))}
                         <Button className="bg-accent hover:bg-primary mt-2 w-full font-semibold text-white">
                             <a
-                                href="./docs/resume.pdf"
+                                href="/resume.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 download="resume"
