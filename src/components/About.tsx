@@ -67,9 +67,9 @@ export default function About() {
                     <h2 className="section-title gradient-text">About Me</h2>
                 </div>
                 <SlideUpAnimation duration={0.3}>
-                    <div className="flex md:flex-row flex-col items-center gap-20 lg:gap-10 mb-10">
+                    <div className="flex lg:flex-row-reverse flex-col items-center gap-20 lg:gap-10 mb-10">
                         {/* Text Content */}
-                        <div className="space-y-4 order-2 md:order-1 w-full lg:w-3/5">
+                        <div className="space-y-4 order-2 md:order-2 w-full lg:w-3/5">
                             <p>
                                 I&apos;m a passionate self-taught Full-Stack
                                 Developer with a deep love for building
@@ -97,7 +97,7 @@ export default function About() {
                         </div>
 
                         {/* Image */}
-                        <div className="flex lg:flex-row flex-col justify-center items-center order-1 md:order-2 w-full md:w-2/3">
+                        <div className="flex justify-center items-center order-1 md:order-1 w-full md:w-2/3">
                             <Image
                                 src="/public/profile.jpg"
                                 alt="Profile Picture"
