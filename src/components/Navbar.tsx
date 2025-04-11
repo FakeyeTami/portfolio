@@ -1,8 +1,6 @@
 "use client";
 
-import { saveAs } from "file-saver";
 import DropDownAnimation from "./animations/DropDown";
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -31,10 +29,6 @@ const Navbar = () => {
         // { title: "Projects", id: "projects" },
         { title: "Contact", id: "contact" },
     ];
-
-    const handleDownload = () => {
-        saveAs("./docs/Resume.pdf", "resume.pdf");
-    };
 
     const scrollToSection = (id: string) => {
         setIsMenuOpen(false);
@@ -112,11 +106,15 @@ const Navbar = () => {
                                 {item.title}
                             </button>
                         ))}
-                        <Button
-                            className="bg-accent hover:bg-primary mt-2 w-full font-semibold text-white"
-                            onClick={handleDownload}
-                        >
-                            Resume
+                        <Button className="bg-accent hover:bg-primary mt-2 w-full font-semibold text-white">
+                            <a
+                                href="./docs/resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                download="resume"
+                            >
+                                Download Resume
+                            </a>
                         </Button>
                     </div>
                 </div>
